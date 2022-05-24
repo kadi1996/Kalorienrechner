@@ -14,14 +14,17 @@ let activity = document.getElementById("activity");
 
 let myFunction = () => {
     // console.log("text");
-    console.log(height.value);
-    console.log(alter.value);
-    console.log(gewicht.value);
-
-
+    // let numberHeight = Number(height.value);
+    // let numberAge = Number(alter.value);
+    // let numberGewicht = Number(gewicht.value)
+    // console.log(numberGewicht);
+    // console.log(numberHeight);
 
     if (radioM.checked) {
-        (664.7 + (13.7 * gewicht.value) + (5 * height.value) - (6.8 * alter.value));
+
+        outputKcal.innerHTML = (664.7 + (13.7 * Number(gewicht.value)) + (5 * Number(height.value)) - (6.8 * Number(alter.value))).toFixed(0);
+        gesamtOutputKcal.innerHTML = ((664.7 + (13.7 * Number(gewicht.value)) + (5 * Number(height.value)) - (6.8 * Number(alter.value)) * activity.value).toFixed(0));
     } else
-        (655.1 + (9.6 * gewicht.value) + (1.8 * height.value) - (5.7 * alter.value))
+        outputKcal.innerHTML = (655.1 + (9.6 * Number(gewicht.value)) + (1.8 * Number(height.value)) - (5.7 * Number(alter.value)).toFixed(0));
+    gesamtOutputKcal.innerHTML = ((655.1 + (9.6 * Number(gewicht.value)) + (1.8 * Number(height.value)) - (5.7 * Number(alter.value)) * activity.value).toFixed(0));
 }   
